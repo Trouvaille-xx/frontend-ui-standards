@@ -1,0 +1,387 @@
+/* Design tokens, light theme by default.
+   Load this file before any component style. Components consume semantic tokens only,
+   never raw palette values, and never a bare hex. */
+
+:root {
+  /* ============================================================
+     Layer 1, raw palette
+     ============================================================ */
+
+  /* teal 50, soft tint for selected rows and tags */
+  --c-teal-50: #E7F1F0;
+  /* teal 300, lifted primary hover and chart series 2 on dark */
+  --c-teal-300: #5EEAD4;
+  /* teal 400, lifted primary for dark backgrounds */
+  --c-teal-400: #2DD4BF;
+  /* teal 500, lifted primary pressed on dark */
+  --c-teal-500: #14B8A6;
+  /* teal 600, big text and icon use only, chart series 2 */
+  --c-teal-600: #0D9488;
+  /* teal 700, default primary fill */
+  --c-teal-700: #0F766E;
+  /* teal 800, primary hover */
+  --c-teal-800: #115E59;
+  /* teal 900, primary pressed */
+  --c-teal-900: #134E4A;
+  /* teal 950, primary soft on dark surfaces */
+  --c-teal-950: #143835;
+
+  /* green 50, soft success background */
+  --c-green-50: #E8F2EC;
+  /* green 400, lifted success for dark backgrounds */
+  --c-green-400: #4ADE80;
+  /* green 600, big text and icon use only */
+  --c-green-600: #16A34A;
+  /* green 700, success text and fill */
+  --c-green-700: #15803D;
+  /* green 800, success hover and text on soft */
+  --c-green-800: #166534;
+  /* green 900, success pressed */
+  --c-green-900: #14532D;
+  /* green 950, success tint on dark surfaces */
+  --c-green-950: #1D3428;
+
+  /* amber 50, soft warning background */
+  --c-amber-50: #F8EEE6;
+  /* amber 400, lifted warning for dark backgrounds */
+  --c-amber-400: #FBBF24;
+  /* amber 600, big text and icon use only */
+  --c-amber-600: #D97706;
+  /* amber 700, warning text and fill */
+  --c-amber-700: #B45309;
+  /* amber 800, warning hover and text on soft */
+  --c-amber-800: #92400E;
+  /* amber 900, warning pressed */
+  --c-amber-900: #78350F;
+  /* amber 950, warning tint on dark surfaces */
+  --c-amber-950: #3A2E18;
+
+  /* coral 50, soft coral background */
+  --c-coral-50: #F9ECEA;
+  /* coral 400, lifted coral for dark backgrounds */
+  --c-coral-400: #FF8A70;
+  /* coral 600, big text and icon use only */
+  --c-coral-600: #D9534F;
+  /* coral 700, coral fill */
+  --c-coral-700: #C1442F;
+  /* coral 800, coral hover and text on soft */
+  --c-coral-800: #A63A29;
+  /* coral 900, coral pressed */
+  --c-coral-900: #8B3022;
+  /* coral 950, deep pressed and dark tint */
+  --c-coral-950: #74261B;
+
+  /* cyan 50, soft cyan background */
+  --c-cyan-50: #E7F1F4;
+  /* cyan 400, lifted cyan for dark backgrounds */
+  --c-cyan-400: #22D3EE;
+  /* cyan 600, big text and icon use only */
+  --c-cyan-600: #0891B2;
+  /* cyan 700, cyan text and fill */
+  --c-cyan-700: #0E7490;
+  /* cyan 800, cyan hover and text on soft */
+  --c-cyan-800: #155E75;
+  /* cyan 900, cyan pressed */
+  --c-cyan-900: #164E63;
+
+  /* rose 50, soft rose background */
+  --c-rose-50: #F8E7EC;
+  /* rose 400, lifted rose for dark backgrounds */
+  --c-rose-400: #FB7185;
+  /* rose 600, rose fill */
+  --c-rose-600: #E11D48;
+  /* rose 700, danger text and fill */
+  --c-rose-700: #BE123C;
+  /* rose 800, danger hover and text on soft */
+  --c-rose-800: #9F1239;
+  /* rose 900, danger pressed */
+  --c-rose-900: #881337;
+  /* rose 950, danger tint on dark surfaces */
+  --c-rose-950: #3B1E26;
+
+  /* neutral 0, page background */
+  --c-gray-0: #FFFFFF;
+  /* neutral 2, card and section surface */
+  --c-gray-50: #F7F8FA;
+  /* neutral 3, hover surface and zebra rows */
+  --c-gray-100: #EFF1F4;
+  /* neutral 4, regular border and divider */
+  --c-gray-200: #E3E6EB;
+  /* neutral 5, input border and strong divider */
+  --c-gray-300: #CBD0D8;
+  /* neutral 6, disabled text and decorative icon */
+  --c-gray-400: #9BA1AB;
+  /* neutral 7, secondary text and placeholder */
+  --c-gray-500: #6A7180;
+  /* neutral 8, body text */
+  --c-gray-700: #2B2F36;
+  /* neutral 9, heading text */
+  --c-gray-900: #12141A;
+
+  /* charcoal, dark theme page background */
+  --c-charcoal-900: #24262A;
+  /* charcoal, dark theme card surface */
+  --c-charcoal-850: #2C2F34;
+  /* charcoal, dark theme hover surface */
+  --c-charcoal-800: #33373D;
+  /* charcoal, dark theme border */
+  --c-charcoal-700: #3A3E45;
+  /* charcoal, dark theme strong border */
+  --c-charcoal-650: #4A4F58;
+  /* charcoal, dark theme secondary text */
+  --c-charcoal-300: #A8AEB8;
+  /* charcoal, dark theme body text */
+  --c-charcoal-100: #E8EAED;
+
+  /* ============================================================
+     Layer 2, semantic color
+     ============================================================ */
+
+  /* brand primary, main button, selected state, link, chart series 1 */
+  --color-primary: var(--c-teal-700);
+  /* primary on hover, one step darker on the same hue */
+  --color-primary-hover: var(--c-teal-800);
+  /* primary on press, two steps darker on the same hue */
+  --color-primary-active: var(--c-teal-900);
+  /* primary tint, selected row, tag background, info strip */
+  --color-primary-soft: var(--c-teal-50);
+  /* text and icon placed on top of a primary fill */
+  --color-primary-on: var(--c-gray-0);
+  /* focus ring, keyboard focus and active input */
+  --color-focus-ring: rgba(15, 118, 110, 0.35);
+
+  /* success fill and success text */
+  --color-success: var(--c-green-700);
+  /* success tint background */
+  --color-success-soft: var(--c-green-50);
+  /* warning fill and warning text */
+  --color-warning: var(--c-amber-700);
+  /* warning tint background */
+  --color-warning-soft: var(--c-amber-50);
+  /* danger fill and danger text */
+  --color-danger: var(--c-rose-700);
+  /* danger tint background */
+  --color-danger-soft: var(--c-rose-50);
+
+  /* page background */
+  --color-bg: var(--c-gray-0);
+  /* card and panel surface */
+  --color-surface: var(--c-gray-50);
+  /* hover surface for rows and list items */
+  --color-surface-hover: var(--c-gray-100);
+  /* regular border and divider */
+  --color-border: var(--c-gray-200);
+  /* input border, table outline, strong divider */
+  --color-border-strong: var(--c-gray-300);
+  /* body text */
+  --color-text: var(--c-gray-700);
+  /* secondary text and placeholder */
+  --color-text-secondary: var(--c-gray-500);
+  /* disabled text only */
+  --color-text-disabled: var(--c-gray-400);
+  /* modal and drawer scrim */
+  --color-overlay: rgba(18, 20, 26, 0.45);
+
+  /* chart series 1, always the primary */
+  --color-chart-1: var(--color-primary);
+  /* chart series 2, 600 step of the primary hue, moves with the theme */
+  --color-chart-2: var(--c-teal-600);
+  /* chart series 3, neutral so a third series never adds a new hue */
+  --color-chart-3: var(--c-gray-500);
+
+  /* ============================================================
+     Layer 3, spacing, radius, shadow, motion
+     ============================================================ */
+
+  /* 4px, icon to label gap */
+  --space-xxs: .25rem;
+  /* 8px, inline control gap */
+  --space-xs: .5rem;
+  /* 12px, dense form spacing */
+  --space-sm: .75rem;
+  /* 16px, default block spacing */
+  --space-md: 1rem;
+  /* 24px, section inner padding */
+  --space-lg: 1.5rem;
+  /* 32px, card padding */
+  --space-xl: 2rem;
+  /* 48px, block to block gap */
+  --space-2xl: 3rem;
+  /* 64px, page section gap */
+  --space-3xl: 4rem;
+
+  /* 4px, tag and badge */
+  --radius-sm: 4px;
+  /* 6px, input and small button */
+  --radius-md: 6px;
+  /* 10px, card and panel */
+  --radius-lg: 10px;
+  /* 14px, modal and drawer */
+  --radius-xl: 14px;
+  /* pill, switch, avatar */
+  --radius-full: 999px;
+
+  /* hairline lift, table row hover */
+  --shadow-xs: 0 1px 2px rgba(18, 20, 26, 0.06);
+  /* small lift, dropdown and popover */
+  --shadow-sm: 0 2px 6px rgba(18, 20, 26, 0.08);
+  /* medium lift, card and sticky header */
+  --shadow-md: 0 6px 16px rgba(18, 20, 26, 0.10);
+  /* large lift, modal and drawer */
+  --shadow-lg: 0 16px 40px rgba(18, 20, 26, 0.14);
+
+  /* 120ms, color and opacity feedback */
+  --duration-fast: 120ms;
+  /* 200ms, default transition */
+  --duration-base: 200ms;
+  /* 320ms, panel and drawer motion */
+  --duration-slow: 320ms;
+  /* entrance easing, decelerate into rest */
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  /* exit and bidirectional easing */
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+
+  /* ============================================================
+     Layer 4, fluid sizing and scaling
+     Every size a component needs lives in this block. Never write a
+     bare width, height or font-size in a component rule.
+     ============================================================ */
+
+  /* 11px, badge and dense meta, rem so it follows the text size setting */
+  --text-2xs: .6875rem;
+  /* 12px, table meta and helper text */
+  --text-xs: .75rem;
+  /* 13px, label and secondary button */
+  --text-sm: .8125rem;
+  /* 14px, body and default control */
+  --text-base: .875rem;
+  /* 15px, card title */
+  --text-md: .9375rem;
+  /* 18px, section title */
+  --text-lg: 1.125rem;
+  /* 24px, page title */
+  --text-xl: 1.5rem;
+
+  /* page title, grows from 20px to 24px with the viewport */
+  --text-fluid-page: clamp(1.25rem, 1.05rem + .62vw, 1.5rem);
+  /* section title, grows from 17px to 19px with the viewport */
+  --text-fluid-section: clamp(1.0625rem, .98rem + .4vw, 1.1875rem);
+
+  /* page side padding, 16px to 32px, replaces fixed page padding */
+  --gutter-inline: clamp(1rem, 3vw, 2rem);
+  /* vertical gap between sections, 24px to 48px */
+  --gutter-section: clamp(1.5rem, 4vw, 3rem);
+
+  /* page width cap, keep the 1120px limit but never touch the edge */
+  --page-max: min(70rem, 100% - 2 * var(--gutter-inline));
+
+  /* touch target floor, a minimum never a fixed height */
+  --tap-min: 2.75rem;
+  /* control height floor, let padding grow it with the text */
+  --control-min: 2.25rem;
+
+  /* container query breakpoints, used inside @container not @media */
+  --container-sm: 30rem;
+  /* two column threshold at 480px of the container itself */
+  --container-md: 45rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* dark page background, neutral charcoal, never pure black */
+    --color-bg: var(--c-charcoal-900);
+    /* dark card surface */
+    --color-surface: var(--c-charcoal-850);
+    /* dark hover surface */
+    --color-surface-hover: var(--c-charcoal-800);
+    /* dark border and divider */
+    --color-border: var(--c-charcoal-700);
+    /* dark strong border, one step lighter for inputs */
+    --color-border-strong: var(--c-charcoal-650);
+    /* dark body text */
+    --color-text: var(--c-charcoal-100);
+    /* dark secondary text */
+    --color-text-secondary: var(--c-charcoal-300);
+    /* dark disabled text, same step as light theme */
+    --color-text-disabled: var(--c-gray-500);
+
+    /* primary lifted one step, 8.14:1 on the dark background */
+    --color-primary: var(--c-teal-400);
+    /* lifted primary hover, one step brighter */
+    --color-primary-hover: var(--c-teal-300);
+    /* lifted primary pressed, one step down */
+    --color-primary-active: var(--c-teal-500);
+    /* primary soft on dark surfaces, replaces the 10 percent tint */
+    --color-primary-soft: var(--c-teal-950);
+    /* text on a lifted primary fill, use dark ink instead of white */
+    --color-primary-on: var(--c-gray-900);
+    /* focus ring on dark surfaces */
+    --color-focus-ring: rgba(45, 212, 191, 0.45);
+
+    /* lifted success for dark backgrounds */
+    --color-success: var(--c-green-400);
+    /* dark success tint */
+    --color-success-soft: var(--c-green-950);
+    /* lifted warning for dark backgrounds */
+    --color-warning: var(--c-amber-400);
+    /* dark warning tint */
+    --color-warning-soft: var(--c-amber-950);
+    /* lifted danger for dark backgrounds */
+    --color-danger: var(--c-rose-400);
+    /* dark danger tint */
+    --color-danger-soft: var(--c-rose-950);
+
+    /* lifted chart series 2 */
+    --color-chart-2: var(--c-teal-300);
+    /* lifted chart series 3 */
+    --color-chart-3: var(--c-charcoal-300);
+
+    /* dark scrim */
+    --color-overlay: rgba(0, 0, 0, 0.6);
+    /* deeper shadow so cards still separate from the dark ground */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
+    /* dark dropdown lift */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.40);
+    /* dark card lift */
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.45);
+    /* dark modal lift */
+    --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.55);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /* motion off, keep state changes instant */
+    --duration-fast: 1ms;
+    /* motion off, keep state changes instant */
+    --duration-base: 1ms;
+    /* motion off, keep state changes instant */
+    --duration-slow: 1ms;
+  }
+}
+
+/* Theme swap: change only --color-primary, --color-primary-hover and --color-primary-active.
+   Pick another family from layer 1 (green, amber, coral, cyan or rose) and keep the 600/700/800/900 ladder.
+   Re-check the new fill against --color-primary-on, it must stay at 4.5:1.
+   In the dark block point the same three tokens at that family's 300/400/500 steps.
+   Nothing else in this file changes. */
+
+/* Usage recipes, copy these instead of writing sizes in component CSS.
+
+   Page shell, capped but never touching the edge:
+   .page { width: 100%; max-width: var(--page-max); margin-inline: auto;
+           padding-inline: var(--gutter-inline); }
+
+   Card grid, collapses on its own without a media query:
+   .list { container-type: inline-size; display: grid; gap: var(--space-sm);
+           grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+
+   Drawer and modal, never wider than the viewport:
+   .drawer { width: min(22.5rem, 92vw); }
+   .modal  { width: 100%; max-width: 26.25rem; }
+
+   Buttons grow with their label, never a fixed width:
+   .btn { min-height: var(--control-min); padding: 0 1rem; }
+
+   Full viewport height without the static viewport unit overflow:
+   .app { min-height: 100dvh; } */
